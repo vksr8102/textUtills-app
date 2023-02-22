@@ -1,12 +1,13 @@
 
 import "./App.css";
 import Navbar from './Components/Navbar'
-import Textarea from './Components/formText'
+
 import Alert from './Components/Alert'
 
 import About from './Components/About'
 import React ,{ useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Textarea from "./Components/Textarea";
 // import { type } from "@testing-library/user-event/dist/type";
 function App(){
  const[mode , setMode]=useState('light');
@@ -48,8 +49,8 @@ setTimeout(() => {
  <Navbar title = "TextUtil" About="About "  mode ={mode} toggleMode={toggleMode}/>
  <Alert alert ={alert}/>
       <Routes>
-        <Route path="/" element={<Textarea showAlert={showAlert} heading="TextUtils - Word Counter, Character Counter, Remove extra spaces" mode={mode}/>} />
-          <Route path="/about" element={<About mode={mode}/>} />
+        <Route exact path="/" element={<Textarea showAlert={showAlert} heading="TextUtils - Word Counter, Character Counter, Remove extra spaces" mode={mode}/>} />
+          <Route exact path="/about" element={<About mode={mode}/>} />
       </Routes>
     </Router>
  </> 
